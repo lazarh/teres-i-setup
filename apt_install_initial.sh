@@ -60,7 +60,7 @@ sudo headphones_on
 slstatus &
 
 # wallpaparer
-feh --bg-scale /home/debian/Pictures/wallpapers/*.jpg -z
+feh --bg-scale ~/Pictures/wallpapers/*.jpg -z
 
 # keyboard layout
 setxkbmap -model pc104 -layout us,bg -variant ,phonetic -option g
@@ -74,6 +74,7 @@ touch ~/.dwm/autostart_blocking.sh
 chmod +x ~/.dwm/*.sh
 
 echo 'Xft.dpi: 82' >> ~/.Xresources
+echo 'exec dwm' >> ~/.xinitrc
 
 # wallpapares
 if [ ! -d ~/Pictures/wallpapers ]; then
