@@ -25,7 +25,7 @@ cd $DIR_GIT/tabbed
 sudo make clean install
 
 # headphones on
-cat > /usr/local/bin/headphones_on << EOF
+cat > headphones_on << EOF
 #!/bin/bash
 
 echo 361 > /sys/class/gpio/export
@@ -35,7 +35,7 @@ echo 361 > /sys/class/gpio/unexport
 EOF
 
 # headphones off
-cat > /usr/local/bin/headphones_off << EOF
+cat > headphones_off << EOF
 #!/bin/bash
 
 echo 361 > /sys/class/gpio/export
@@ -44,13 +44,14 @@ echo 0 > /sys/class/gpio/gpio361/value
 echo 361 > /sys/class/gpio/unexport
 EOF
 
-chmod +x *.sh
-sudo mv *.sh /usr/local/bin/.
+chmod +x headphones*
+sudo mv headphones* /usr/local/bin/.
 
 # dwm autostart
 if [ ! -d ~/.dwm/ ]; then
 	  mkdir -p ~/.dwm/;
 fi
+
 cat > ~/.dwm/autostart.sh << EOF
 # headphones on
 sudo headphones_on
@@ -70,10 +71,11 @@ xcompmgr &
 EOF
 
 touch ~/.dwm/autostart_blocking.sh
-
 chmod +x ~/.dwm/*.sh
 
 echo 'Xft.dpi: 82' >> ~/.Xresources
 
 # wallpapares
-git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
+if [ ! -d ~/Pictures/wallpapers ]; then
+	git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
+fi
