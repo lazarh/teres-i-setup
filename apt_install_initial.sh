@@ -85,7 +85,51 @@ chmod +x ~/.dwm/*.sh
 #echo 'Xft.dpi: 82' >> ~/.Xresources
 #echo 'exec dwm' >> ~/.xinitrc
 
+# dpi config
 grep -qxF 'Xft.dpi: 82' ~/.Xresources || echo 'Xft.dpi: 82' >> ~/.Xresources
+
+echo > 20-video.conf << EOF
+Section "Device"
+        Identifier "Lima"
+#       MatchDriver "sun4i-drm"
+        Driver "modesetting"
+        Option "PrimaryGPU" "true"
+        Option "HWCursor" "false"
+        Option "SwapbuffersWait" "true"
+EndSection
+
+Section "Monitor"
+  Identifier  "eDP-1"
+  Option      "DPMS" "false"
+#  DisplaySize  533 300    # In millimeters
+EndSection
+
+Section "Screen"
+        Identifier "Screen0"
+        Device "Lima"
+        Monitor "eDP-1"
+EndSection
+
+Section "ServerFlags"
+  Option "AutoAddGPU" "off"
+  Option "BlankTime" "0"
+  Option "StandbyTime" "0"
+  Option "SuspendTime" "0"
+  Option "OffTime" "0"
+EndSection
+EOF
+sudo mv 20-video.conf /usr/share/X11/xorg.conf.d/.
+
+mkdir .config/gtk-3.0/ -p
+cat > settings.ini << EOF
+[Settings]
+gtk-icon-theme-name = Adwaita
+gtk-theme-name = Adwaita
+gtk-font-name = DejaVu Sans 8
+EOF
+
+
+
 grep -qxF 'exec dwm' ~/.xinitrc || echo 'exec dwm' >> ~/.xinitrc
 
 # wallpapares
