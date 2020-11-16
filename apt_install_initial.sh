@@ -130,7 +130,20 @@ EOF
 
 grep -qxF 'exec dwm' ~/.xinitrc || echo 'exec dwm' >> ~/.xinitrc
 
-grep -qxF 'if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi' ~/.bashrc || echo 'if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi' >> ~/.bashrc
+
+cat > .bashrc_teres << EOF
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi
+
+toilet Teres I
+
+temp=$( cat /sys/devices/virtual/thermal/thermal_zone0/temp )
+temp=`expr $temp / 1000`
+echo '          CPU Temperature:' $temp 'C'
+uptime=$( uptime )
+echo $uptime
+EOF
+
+grep -qxF '. $HOME/.bashrc_teres' || echo '. $HOME/.bashrc_teres' >> ~/.bashrc
 
 # wallpapares
 if [ ! -d ~/Pictures/wallpapers ]; then
