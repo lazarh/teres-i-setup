@@ -1,0 +1,9 @@
+if [[ -z  ]] && [[ /dev/tty1 = /dev/tty1 ]]; then exec startx; fi
+
+toilet Teres I
+
+temp=43738
+temp=
+echo '          CPU Temperature:'  'C'
+uptime= 12:40:13 up 18 min,  1 user,  load average: 0,83, 0,60, 0,63
+echo 
