@@ -157,13 +157,15 @@ EOF
 sudo mv 20-video.conf /usr/share/X11/xorg.conf.d/.
 
 echo -e "${RED}set up gtk Arc-Dark theme${NC}"
-mkdir .config/gtk-3.0/ -p
+mkdir ~/.config/gtk-3.0/ -p
 cat > settings.ini << EOF
 [Settings]
 gtk-icon-theme-name = Arc-Dark
 gtk-theme-name = Arc-Dark
 gtk-font-name = DejaVu Sans 8
 EOF
+
+mv settings.ini ~/.config/gtk-3.0/.
 
 echo -e "${RED}install wallpapers ...${NC}"
 # wallpapares
