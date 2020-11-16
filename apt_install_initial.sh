@@ -3,7 +3,7 @@
 DIR_GIT=~/Documents/git/teres-i-setup
 
 sudo apt update
-sudo apt install man-db fdisk vim build-essential pkg-config cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config xcb-proto libxcb-xrm-dev libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev unzip gpiod htop suckless-tools git mpd libx11-dev libxft-dev libxinerama-dev mpd mpc libmpdclient-dev xinit xserver-xorg x11-xserver-utils feh mesa-utils xcompmgr brightnessctl pcmanfm alsa-utils alsa-firmware-loaders alsa-base pulseaudio arc-theme -y
+sudo apt install man-db fdisk vim build-essential pkg-config cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config xcb-proto libxcb-xrm-dev libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev unzip gpiod htop suckless-tools git mpd libx11-dev libxft-dev libxinerama-dev mpd mpc libmpdclient-dev xinit xserver-xorg x11-xserver-utils feh mesa-utils xcompmgr brightnessctl pcmanfm alsa-utils alsa-firmware-loaders alsa-base pulseaudio arc-theme hdparm xclip sqlite3 python3-pip -y
 
 if [ ! -d $DIR_GIT ]; then
 	mkdir -p $DIR_GIT;
