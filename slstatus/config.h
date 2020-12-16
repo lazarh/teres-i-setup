@@ -63,9 +63,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ mpdonair, "M:%s - ", "a" }, 
-	{ mpdonair, "%s ", "t" }, 
-	{ mpdonair, "%s ", "p" }, 
+/*	{ mpdonair, "M:%s - ", "a" }, 
+ *	{ mpdonair, "%s ", "t" }, 
+ *	{ mpdonair, "%s ", "p" }, */ 
 	{ cpu_perc, "C:%s ", "" },
 	{ disk_free, "H:%.5s GiB ", "/" },
 	{ wifi_perc, "W:%3s%% on ", "wlan0" },
